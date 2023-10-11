@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.snow.chainshop</groupId>
+    <artifactId>chainshop-framework</artifactId>
+    <version>1.8.2-snapshot</version>
+  </parent>
+  <groupId>com.snow.chainshop</groupId>
+  <artifactId>chainshop-spring-boot-starter-captcha</artifactId>
+  <version>1.8.2-snapshot</version>
+  <name>${project.artifactId}</name>
+  <description>验证码拓展
+        1. 基于 aj-captcha 实现滑块验证码，文档：https://ajcaptcha.beliefteam.cn/captcha-doc/</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.xingyuv</groupId>
+      <artifactId>spring-boot-starter-captcha-plus</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.snow.chainshop</groupId>
+      <artifactId>chainshop-spring-boot-starter-redis</artifactId>
+    </dependency>
+  </dependencies>
+</project>

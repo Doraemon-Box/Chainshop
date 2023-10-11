@@ -1,0 +1,5 @@
+com.snow.chainshop.framework.apilog.config.ChainshopApiLogAutoConfiguration
+com.snow.chainshop.framework.jackson.config.ChainshopJacksonAutoConfiguration
+com.snow.chainshop.framework.swagger.config.ChainshopSwaggerAutoConfiguration
+com.snow.chainshop.framework.web.config.ChainshopWebAutoConfiguration
+com.snow.chainshop.framework.xss.config.ChainshopXssAutoConfiguration

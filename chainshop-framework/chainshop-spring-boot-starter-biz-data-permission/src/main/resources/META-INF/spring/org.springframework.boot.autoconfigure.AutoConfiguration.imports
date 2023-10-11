@@ -1,0 +1,2 @@
+com.snow.chainshop.framework.datapermission.config.ChainshopDataPermissionAutoConfiguration
+com.snow.chainshop.framework.datapermission.config.ChainshopDeptDataPermissionAutoConfiguration

@@ -1,0 +1,90 @@
+package com.snow.chainshop.module.promotion.convert.discount;
+
+import cn.hutool.core.util.ObjectUtil;
+import com.snow.chainshop.framework.common.pojo.PageResult;
+import com.snow.chainshop.module.promotion.api.discount.dto.DiscountProductRespDTO;
+import com.snow.chainshop.module.promotion.controller.admin.discount.vo.*;
+import com.snow.chainshop.module.promotion.dal.dataobject.discount.DiscountActivityDO;
+import com.snow.chainshop.module.promotion.dal.dataobject.discount.DiscountProductDO;
+import com.snow.chainshop.module.promotion.enums.common.PromotionDiscountTypeEnum;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
+import java.util.List;
+
+/**
+ * 限时折扣活动 Convert
+ *
+ * @author Chainshop
+ */
+@Mapper
+public interface DiscountActivityConvert {
+
+    DiscountActivityConvert INSTANCE = Mappers.getMapper(DiscountActivityConvert.class);
+
+    DiscountActivityDO convert(DiscountActivityCreateReqVO bean);
+
+    DiscountActivityDO convert(DiscountActivityUpdateReqVO bean);
+
+    DiscountActivityRespVO convert(DiscountActivityDO bean);
+
+    List<DiscountActivityRespVO> convertList(List<DiscountActivityDO> list);
+
+    List<DiscountProductRespDTO> convertList02(List<DiscountProductDO> list);
+
+    PageResult<DiscountActivityRespVO> convertPage(PageResult<DiscountActivityDO> page);
+
+    DiscountProductDO convert(DiscountActivityBaseVO.Product bean);
+
+    DiscountActivityDetailRespVO convert(DiscountActivityDO activity, List<DiscountProductDO> products);
+
+    // =========== 比较是否相等 ==========
+    /**
+     * 比较两个限时折扣商品是否相等
+     *
+     * @param productDO 数据库中的商品
+     * @param productVO 前端传入的商品
+     * @return 是否匹配
+     */
+    @SuppressWarnings("DuplicatedCode")
+    default boolean isEquals(DiscountProductDO productDO, DiscountActivityBaseVO.Product productVO) {
+        if (ObjectUtil.notEqual(productDO.getSpuId(), productVO.getSpuId())
+                || ObjectUtil.notEqual(productDO.getSkuId(), productVO.getSkuId())
+                || ObjectUtil.notEqual(productDO.getDiscountType(), productVO.getDiscountType())) {
+            return false;
+        }
+        if (productDO.getDiscountType().equals(PromotionDiscountTypeEnum.PRICE.getType())) {
+            return ObjectUtil.equal(productDO.getDiscountPrice(), productVO.getDiscountPrice());
+        }
+        if (productDO.getDiscountType().equals(PromotionDiscountTypeEnum.PERCENT.getType())) {
+            return ObjectUtil.equal(productDO.getDiscountPercent(), productVO.getDiscountPercent());
+        }
+        return true;
+    }
+
+    /**
+     * 比较两个限时折扣商品是否相等
+     * 注意，比较时忽略 id 编号
+     *
+     * @param productDO 商品 1
+     * @param productVO 商品 2
+     * @return 是否匹配
+     */
+    @SuppressWarnings("DuplicatedCode")
+    default boolean isEquals(DiscountProductDO productDO, DiscountProductDO productVO) {
+        if (ObjectUtil.notEqual(productDO.getSpuId(), productVO.getSpuId())
+                || ObjectUtil.notEqual(productDO.getSkuId(), productVO.getSkuId())
+                || ObjectUtil.notEqual(productDO.getDiscountType(), productVO.getDiscountType())) {
+            return false;
+        }
+        if (productDO.getDiscountType().equals(PromotionDiscountTypeEnum.PRICE.getType())) {
+            return ObjectUtil.equal(productDO.getDiscountPrice(), productVO.getDiscountPrice());
+        }
+        if (productDO.getDiscountType().equals(PromotionDiscountTypeEnum.PERCENT.getType())) {
+            return ObjectUtil.equal(productDO.getDiscountPercent(), productVO.getDiscountPercent());
+        }
+        return true;
+    }
+
+
+}

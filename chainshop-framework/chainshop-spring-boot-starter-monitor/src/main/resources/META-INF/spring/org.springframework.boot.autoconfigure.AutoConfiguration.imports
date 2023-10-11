@@ -1,0 +1,2 @@
+com.snow.chainshop.framework.tracer.config.ChainshopTracerAutoConfiguration
+com.snow.chainshop.framework.tracer.config.ChainshopMetricsAutoConfiguration

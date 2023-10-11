@@ -1,0 +1,2 @@
+com.snow.chainshop.framework.quartz.config.ChainshopQuartzAutoConfiguration
+com.snow.chainshop.framework.quartz.config.ChainshopAsyncAutoConfiguration

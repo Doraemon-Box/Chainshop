@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>chainshop</artifactId>
+        <groupId>com.snow.chainshop</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>chainshop-module-mall</artifactId>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+
+    <description>
+        商城大模块，由 product 商品、promotion 营销、trade 交易等组成
+    </description>
+    <modules>
+        <module>chainshop-module-promotion-api</module>
+        <module>chainshop-module-promotion-biz</module>
+        <module>chainshop-module-product-api</module>
+        <module>chainshop-module-product-biz</module>
+        <module>chainshop-module-trade-api</module>
+        <module>chainshop-module-trade-biz</module>
+    </modules>
+
+</project>

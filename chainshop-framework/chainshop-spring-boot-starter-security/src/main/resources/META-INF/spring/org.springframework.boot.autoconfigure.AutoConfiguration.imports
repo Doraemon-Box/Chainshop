@@ -1,0 +1,2 @@
+com.snow.chainshop.framework.security.config.ChainshopSecurityAutoConfiguration
+com.snow.chainshop.framework.security.config.ChainshopWebSecurityConfigurerAdapter

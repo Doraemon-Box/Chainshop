@@ -1,0 +1,2 @@
+com.snow.chainshop.framework.datasource.config.ChainshopDataSourceAutoConfiguration
+com.snow.chainshop.framework.mybatis.config.ChainshopMybatisAutoConfiguration

@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  com.snow.chainshop.framework.mybatis.config.IdTypeEnvironmentPostProcessor

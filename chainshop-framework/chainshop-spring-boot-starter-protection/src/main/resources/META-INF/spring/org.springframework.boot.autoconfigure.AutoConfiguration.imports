@@ -1,0 +1,2 @@
+com.snow.chainshop.framework.idempotent.config.ChainshopIdempotentConfiguration
+com.snow.chainshop.framework.lock4j.config.ChainshopLock4jConfiguration
