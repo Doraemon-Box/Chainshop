@@ -70,3 +70,5 @@ functions/mock
 screenshot
 .firebase
 sessionStore
+
+.flattened-pom.xml

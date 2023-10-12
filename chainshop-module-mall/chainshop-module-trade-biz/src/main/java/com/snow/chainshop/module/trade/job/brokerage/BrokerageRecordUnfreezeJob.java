@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * @author owen
  */
 @Component
-@TenantJob
+//@TenantJob
 public class BrokerageRecordUnfreezeJob implements JobHandler {
 
     @Resource

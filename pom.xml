@@ -16,11 +16,11 @@
         <module>chainshop-module-member</module>
         <module>chainshop-module-system</module>
         <module>chainshop-module-infra</module>
-        <!--        <module>chainshop-module-bpm</module>-->
+<!--        <module>chainshop-module-bpm</module>-->
 <!--        <module>chainshop-module-report</module>-->
 <!--        <module>chainshop-module-mp</module>-->
-<!--        <module>chainshop-module-pay</module>-->
-<!--        <module>chainshop-module-mall</module>-->
+        <module>chainshop-module-pay</module>
+        <module>chainshop-module-mall</module>
         <!-- 示例项目 -->
         <module>chainshop-example</module>
     </modules>
